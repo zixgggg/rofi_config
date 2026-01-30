@@ -9,3 +9,5 @@ command: ```cp /usr/share/rofi/themes/ ~/.config/rofi/```
 ```rofi -theme file``` can select theme
 
 example:```rofi -show drun -theme ~/.config/rofi/green.rasi```
+
+or you can just edit config.rasi
