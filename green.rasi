@@ -1,0 +1,94 @@
+* {
+    /* 核心顏色定義 */
+    background:                  rgba ( 0, 61, 0, 95 % );    /* 深綠背景，帶微透明 */
+    foreground:                  rgba ( 0, 211, 0, 100 % );     /* 亮綠色文字 */
+    bordercolor:                 rgba ( 0, 211, 0, 100 % );     /* 亮綠色邊框 */
+    separatorcolor:              @foreground;                   /* 分隔線顏色同文字 */
+    
+    /* 狀態顏色 */
+    normal-background:           rgba ( 0, 211, 0, 0 % );         /* 平時背景透明 */
+    normal-foreground:           @foreground;
+    
+    /* 選中狀態 (反色效果：綠底黑字) */
+    selected-normal-background:  rgba ( 0, 211, 0, 100 % );     /* 選中時變亮綠底 */
+    selected-normal-foreground:  rgba ( 0, 61, 0, 100 % );    /* 選中時字變深綠 */
+    
+    /* 交替行顏色 (設為透明保持整潔) */
+    alternate-normal-background: rgba ( 0, 0, 0, 0 % );
+    alternate-normal-foreground: @foreground;
+
+    /* 緊急狀態 (保留紅色作為警告) */
+    red:                         rgba ( 220, 50, 47, 100 % );
+    urgent-foreground:           rgba ( 255, 160, 160, 100 % );
+    urgent-background:           rgba ( 0, 0, 0, 0 % );
+    selected-urgent-background:  @red;
+    selected-urgent-foreground:  @background;
+
+    /* 活躍狀態 (例如視窗模式中已開啟的視窗) */
+    active-foreground:           rgba ( 160, 255, 160, 100 % );
+    active-background:           rgba ( 0, 0, 0, 0 % );
+    selected-active-background:  @foreground;
+    selected-active-foreground:  @background;
+
+    /* 其他全域設定 */
+    spacing:                     2;
+    background-color:            rgba ( 0, 0, 0, 0 % );
+}
+
+/* 以下結構保持原樣，但會自動套用上面的新顏色變數 */
+window {
+    background-color: @background;
+    border:           2;           /* 稍微加粗邊框 */
+    padding:          10;          /* 增加內距 */
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+listview {
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      4px ;
+    scrollbar:    true;
+    padding:      5px 0px 0px ;
+}
+
+element {
+    border:  0;
+    padding: 5px ;                /* 讓選項寬鬆一點好點擊 */
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+/* 這一區塊確保選中時會變色 */
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    handle-color: @foreground;    /* 捲軸把手也要變綠色 */
+    padding:      0;
+}
+
+inputbar {
+    spacing:    5;
+    text-color: @normal-foreground;
+    padding:    5px ;
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        " >";             /* 把冒號改成更有科技感的箭頭 */
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-foreground;
+}
