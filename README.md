@@ -5,3 +5,7 @@ default themes at ```/usr/share/rofi/```
 if you need it you need to copy it to your ```~/.config/rofi/```
 
 command: ```cp /usr/share/rofi/themes/ ~/.config/rofi/```
+
+```rofi -theme file``` can select theme
+
+example:```rofi -show drun -theme ~/.config/rofi/green.rasi```
